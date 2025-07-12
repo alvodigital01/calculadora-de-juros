@@ -1,5 +1,5 @@
 body {
-  background-color: #FFFFFF;
+  background: linear-gradient(to bottom, #0e0e0e, #1d1d1d);
   font-family: 'Segoe UI', sans-serif;
 }
 
@@ -15,4 +15,8 @@ table th,
 table td {
   vertical-align: middle;
   font-size: 1rem;
+}
+
+.form-label{
+  color: white;
 }
