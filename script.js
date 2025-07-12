@@ -2,44 +2,44 @@ const valorProdutoInput = document.getElementById('valorProduto');
 const entradaInput = document.getElementById('entrada');
 const tabelaParcelas = document.getElementById('tabelaParcelas');
 
-// Tabela fixa baseada em financiamento de R$ 800 (compra 1000 - entrada 200)
-const parcelasBase800 = {
-  debito: 834.76,
-  1: 845.42,
-  2: 857.72,
-  3: 863.05,
-  4: 868.38,
-  5: 874.12,
-  6: 879.86,
-  7: 888.63,
-  8: 895.44,
-  9: 900.36,
-  10: 906.92,
-  11: 912.66,
-  12: 919.22,
-  13: 922.50,
-  14: 929.06,
-  15: 934.80,
-  16: 942.18,
-  17: 948.74,
-  18: 959.40
+// Juros fixos por número de parcelas (em % decimal)
+const taxasJuros = {
+  debito: 0.0516,  // mesmo que 1x
+  1: 0.0516,
+  2: 0.0669,
+  3: 0.0736,
+  4: 0.0802,
+  5: 0.0873,
+  6: 0.0945,
+  7: 0.1054,
+  8: 0.1138,
+  9: 0.1199,
+  10: 0.1281,
+  11: 0.1353,
+  12: 0.1434,
+  13: 0.1475,
+  14: 0.1557,
+  15: 0.1628,
+  16: 0.1714,
+  17: 0.1822,
+  18: 0.1927
 };
 
 function atualizarParcelas() {
   const valorProduto = parseFloat(valorProdutoInput.value) || 0;
   const entrada = parseFloat(entradaInput.value) || 0;
   const valorFinanciado = Math.max(valorProduto - entrada, 0);
-  const proporcao = valorFinanciado / 800; // Base para R$ 800 financiado
 
   tabelaParcelas.innerHTML = '';
 
   // Débito
-  const debito = parcelasBase800.debito * proporcao;
-  tabelaParcelas.innerHTML += criarLinha('Débito', debito, 1);
+  const totalDebito = valorFinanciado * (1 + taxasJuros.debito);
+  tabelaParcelas.innerHTML += criarLinha('Débito', totalDebito, 1);
 
   // Parcelado
   for (let i = 1; i <= 18; i++) {
-    const total = (parcelasBase800[i] || 0) * proporcao;
+    const taxa = taxasJuros[i] || 0;
+    const total = valorFinanciado * (1 + taxa);
     tabelaParcelas.innerHTML += criarLinha(`${i}x`, total, i);
   }
 }
