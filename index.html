@@ -144,6 +144,40 @@
       margin-right: 0.5rem;
       font-size: 1.1rem;
     }
+
+    @keyframes borderGlow {
+  0% {
+    box-shadow: 0 0 0px #00FB33;
+  }
+  50% {
+    box-shadow: 0 0 12px #00FB33, 0 0 24px #00FB33;
+  }
+  100% {
+    box-shadow: 0 0 0px #00FB33;
+  }
+}
+
+.btn-link.simulador-animado {
+  animation: borderGlow 1.2s infinite;
+}
+
+@media (min-width: 768px) {
+  .btn-group-desktop {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 680px; /* opcional, para centralizar e limitar largura */
+    margin: 0 auto;
+  }
+
+  .btn-link {
+    flex: 1 1 calc(50% - 1.5rem); /* largura ~ metade do container, descontando gap */
+    max-width: 320px;
+    margin-bottom: 1.5rem; /* espaço vertical entre linhas */
+  }
+}
+
   </style>
 </head>
 <body>
@@ -179,13 +213,14 @@
       </div>
     </a>
 
-    <a href="calculadoradetaxas.html" class="btn-link" target="_blank">
-      <i class="bi bi-calculator"></i>
-      <div class="btn-content">
-        <div>Simulador Cartão</div>
-        <div>Simule sua compra no cartão de crédito</div>
-      </div>
-    </a>
+    <a href="calculadoradetaxas.html" class="btn-link simulador-animado" target="_blank">
+  <i class="bi bi-calculator"></i>
+  <div class="btn-content">
+    <div>Simulador Cartão</div>
+    <div>Simule sua compra no cartão de crédito</div>
+  </div>
+</a>
+
   </div>
 
   <footer>
