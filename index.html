@@ -24,7 +24,7 @@
       align-items: center;
       justify-content: center;
       gap: 1rem;
-      padding: 2rem 1rem 1rem;
+      padding: 3rem 1rem 2rem;
     }
 
     .container-logo img {
@@ -48,7 +48,7 @@
     .subtitulo {
       font-size: 0.8rem;
       color: #fff;
-      background-color: #007F1E;
+      background-color: #005C16;
       padding: 2px 8px;
       border-radius: 6px;
       margin-top: 0.3rem;
@@ -60,16 +60,16 @@
       background-color: transparent;
       border-radius: 12px;
       padding: 1rem;
-      margin: 1rem;
       font-weight: bold;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
       gap: 10px;
       font-size: 1.1rem;
       text-decoration: none;
       transition: background 0.3s;
       text-align: left;
+      width: 100%;
+      margin-bottom: 1rem;
     }
 
     .btn-link:hover {
@@ -91,6 +91,26 @@
     .btn-content {
       display: flex;
       flex-direction: column;
+    }
+
+    .btn-group-desktop {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .btn-group-desktop {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .btn-link {
+        width: 300px;
+        margin: 1rem 0;
+      }
     }
 
     footer {
@@ -116,31 +136,28 @@
 
 <body>
   <div class="container-logo">
-    <img src="logoandersonlima.jpeg" alt="Logo">
+    <img src="logoaplle.jpeg" alt="Logo">
     <div class="logo-text">
       <div class="titulo">Iphones, Acessórios & Assistência</div>
       <div class="subtitulo">Links úteis</div>
     </div>
   </div>
 
-  <div class="container">
+  <div class="container btn-group-desktop">
     <a href="https://www.instagram.com/anderson_lima_miami" class="btn-link">
       <i class="bi bi-instagram"></i>
       <div class="btn-content">Instagram</div>
     </a>
     <a href="https://chat.whatsapp.com/GYu1ScsRgUU9BOHqSy5ndi?mode=r_t" class="btn-link">
       <i class="bi bi-whatsapp"></i>
-      <div class="btn-content">
+      <div class="btn-content text-center">
         <div>WhatsApp</div>
         <div class="whatsapp-label">Fale com um Vendedor</div>
       </div>
     </a>
     <a href="simulador.html" class="btn-link">
       <i class="bi bi-calculator"></i>
-      <div class="btn-content">
-        <div>Simulador Cartão</div>
-        <small>Simule sua compra no cartão de crédito</small>
-      </div>
+      <div class="btn-content">Simulador Cartão</div>
     </a>
   </div>
 
