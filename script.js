@@ -2,42 +2,40 @@ const valorProdutoInput = document.getElementById('valorProduto');
 const entradaInput = document.getElementById('entrada');
 const tabelaParcelas = document.getElementById('tabelaParcelas');
 
-const juros = {
-  1: 0.06383,
-  2: 0.06518,
-  3: 0.073098,
-  4: 0.081138,
-  5: 0.08984,
-  6: 0.103222,
-  7: 0.105274,
-  8: 0.111223,
-  9: 0.115476,
-  10: 0.121938,
-  11: 0.129138,
-  12: 0.135274,
-  13: 0.141200,
-  14: 0.147000,
-  15: 0.153600,
-  16: 0.159800,
-  17: 0.165000,
-  18: 0.170000
+// Tabela fixa de parcelas (baseada em valor financiado de R$ 1.000,00)
+const parcelasFixas = {
+  1: 1051.62,
+  2: 533.46,
+  3: 357.85,
+  4: 270.05,
+  5: 217.46,
+  6: 182.41,
+  7: 157.91,
+  8: 139.23,
+  9: 124.44,
+  10: 112.81,
+  11: 103.21,
+  12: 95.29,
+  13: 88.27,
+  14: 82.55,
+  15: 77.52
 };
 
 function atualizarParcelas() {
   const valorProduto = parseFloat(valorProdutoInput.value) || 0;
   const entrada = parseFloat(entradaInput.value) || 0;
   const valorFinanciado = Math.max(valorProduto - entrada, 0);
-
   tabelaParcelas.innerHTML = '';
 
-  // Débito
+  // Débito (simples acréscimo de 2,606% como estava antes)
   const debito = valorFinanciado * (1 + 0.02606);
   tabelaParcelas.innerHTML += criarLinha('Débito', debito, 1);
 
-  // Parcelado
-  for (let i = 1; i <= 18; i++) {
-    const total = valorFinanciado * (1 + (juros[i] || 0));
-    tabelaParcelas.innerHTML += criarLinha(`${i} x`, total, i);
+  for (let i = 1; i <= 15; i++) {
+    const parcelaBase = parcelasFixas[i]; // valor da parcela para R$ 1.000 financiado
+    const valorParcela = (parcelaBase / 1000) * valorFinanciado;
+    const total = valorParcela * i;
+    tabelaParcelas.innerHTML += criarLinha(`${i}x`, total, i);
   }
 }
 
