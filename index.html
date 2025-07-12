@@ -1,13 +1,154 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iphones Anderson Lima</title>
 
-    <link rel="stylesheet" href="style2.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Links Úteis</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom, #111, #222);
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .container-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      padding: 2rem 1rem 1rem;
+    }
+
+    .container-logo img {
+      max-width: 80px;
+      border-radius: 50%;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .titulo {
+      font-size: 1.1rem;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    .subtitulo {
+      font-size: 0.8rem;
+      color: #fff;
+      background-color: #007F1E;
+      padding: 2px 8px;
+      border-radius: 6px;
+      margin-top: 0.3rem;
+    }
+
+    .btn-link {
+      border: 1px solid #00FB33;
+      color: #fff;
+      background-color: transparent;
+      border-radius: 12px;
+      padding: 1rem;
+      margin: 1rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: background 0.3s;
+      text-align: left;
+    }
+
+    .btn-link:hover {
+      background-color: rgba(0, 251, 51, 0.1);
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .btn-link i {
+      font-size: 1.6rem;
+      color: #00FB33;
+    }
+
+    .whatsapp-label {
+      font-size: 0.85rem;
+      color: #ccc;
+    }
+
+    .btn-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 4rem 1rem 3rem;
+      background-color: #111;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+
+    footer p {
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-icon {
+      color: #00FB33;
+      margin-right: 0.5rem;
+      font-size: 1.1rem;
+    }
+  </style>
 </head>
+
 <body>
-    
+  <div class="container-logo">
+    <img src="logoandersonlima.jpeg" alt="Logo">
+    <div class="logo-text">
+      <div class="titulo">Iphones, Acessórios & Assistência</div>
+      <div class="subtitulo">Links úteis</div>
+    </div>
+  </div>
+
+  <div class="container">
+    <a href="https://www.instagram.com/anderson_lima_miami" class="btn-link">
+      <i class="bi bi-instagram"></i>
+      <div class="btn-content">Instagram</div>
+    </a>
+    <a href="https://chat.whatsapp.com/GYu1ScsRgUU9BOHqSy5ndi?mode=r_t" class="btn-link">
+      <i class="bi bi-whatsapp"></i>
+      <div class="btn-content">
+        <div>WhatsApp</div>
+        <div class="whatsapp-label">Fale com um Vendedor</div>
+      </div>
+    </a>
+    <a href="simulador.html" class="btn-link">
+      <i class="bi bi-calculator"></i>
+      <div class="btn-content">
+        <div>Simulador Cartão</div>
+        <small>Simule sua compra no cartão de crédito</small>
+      </div>
+    </a>
+  </div>
+
+  <footer>
+    <p><strong>Endereço:</strong><br>Empresarial Riomar Trade Center – Torre 1, Sala 103.<br>Localização privilegiada: colado com o Shopping RioMar Recife.</p>
+    <p><i class="bi bi-telephone footer-icon"></i>(81) 98367-8367</p>
+    <p><i class="bi bi-whatsapp footer-icon"></i>Acesse nosso Grupo VIP no WhatsApp.</p>
+  </footer>
 </body>
+
 </html>
