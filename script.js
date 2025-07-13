@@ -4,7 +4,7 @@ const tabelaParcelas = document.getElementById('tabelaParcelas');
 
 // Juros fixos por número de parcelas (em % decimal)
 const taxasJuros = {
-  debito: 0.0516,  // mesmo que 1x
+  debito: 0.0385,  // 3.85%
   1: 0.0516,
   2: 0.0669,
   3: 0.0736,
